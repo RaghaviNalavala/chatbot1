@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career Compass | Guidance & AI Support</title>
+    <meta
+      name="description"
+      content="Career guidance website with study planning, career paths, and a local Ollama-powered chatbot."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <span class="brand-mark">CC</span>
+          <span>Career Compass</span>
+        </div>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#paths">Paths</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#chatbot">Chatbot</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Your future starts here</span>
+            <h1>Guidance for studies, career, and life choices.</h1>
+            <p>
+              Discover the right direction for your skills, interests, and goals with
+              personalized mentorship and a smart AI assistant built for career and
+              education support.
+            </p>
+            <div class="hero-actions">
+              <a href="#chatbot" class="primary-btn">Ask the chatbot</a>
+              <a href="#paths" class="secondary-btn">Explore career paths</a>
+            </div>
+            <ul class="hero-points">
+              <li>Study planning</li>
+              <li>Career coaching</li>
+              <li>Gaming and digital interests</li>
+              <li>General wellness guidance</li>
+            </ul>
+          </div>
+          <div class="hero-panel">
+            <div class="mini-card">
+              <span class="label">Popular path</span>
+              <h3>Technology & Innovation</h3>
+              <p>Programming, AI, design, cybersecurity, and digital careers.</p>
+            </div>
+            <div class="mini-card">
+              <span class="label">Smart support</span>
+              <h3>AI career mentor</h3>
+              <p>Get answers on studies, skills, future options, and wellness questions.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="info-section">
+        <div class="container two-col">
+          <div>
+            <span class="section-tag">Why Career Compass?</span>
+            <h2>We help you choose a path with confidence.</h2>
+          </div>
+          <div>
+            <p>
+              Career planning is not just about marks. It is about matching your
+              strengths, interests, and long-term vision with the right opportunities.
+              Our guidance focuses on practical decisions for study, skills, and future
+              growth.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="paths" class="paths-section">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-tag">Career paths</span>
+            <h2>Explore fields that match your interests</h2>
+          </div>
+          <div class="cards-grid">
+            <article class="path-card">
+              <div class="icon">💻</div>
+              <h3>Technology</h3>
+              <p>Software, AI, cybersecurity, app development, and data careers.</p>
+            </article>
+            <article class="path-card">
+              <div class="icon">🩺</div>
+              <h3>Medical & Health</h3>
+              <p>Medicine, nursing, healthcare support, and wellness-focused careers.</p>
+            </article>
+            <article class="path-card">
+              <div class="icon">🎨</div>
+              <h3>Design & Media</h3>
+              <p>Graphic design, animation, UI/UX, content creation, and digital branding.</p>
+            </article>
+            <article class="path-card">
+              <div class="icon">📈</div>
+              <h3>Business & Finance</h3>
+              <p>Management, entrepreneurship, marketing, and finance pathways.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="roadmap" class="roadmap-section">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-tag">Simple roadmap</span>
+            <h2>How to move forward step by step</h2>
+          </div>
+          <div class="timeline">
+            <div class="step">
+              <span>01</span>
+              <h3>Know yourself</h3>
+              <p>Identify your interests, strengths, and preferred learning style.</p>
+            </div>
+            <div class="step">
+              <span>02</span>
+              <h3>Explore options</h3>
+              <p>Research careers, subjects, and skill requirements before choosing.</p>
+            </div>
+            <div class="step">
+              <span>03</span>
+              <h3>Build skills</h3>
+              <p>Practice consistently with projects, certifications, and real learning.</p>
+            </div>
+            <div class="step">
+              <span>04</span>
+              <h3>Take action</h3>
+              <p>Prepare for interviews, short courses, and future opportunities.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="chatbot" class="chat-section">
+        <div class="container chat-shell">
+          <div class="chat-header">
+            <div>
+              <span class="section-tag">AI assistant</span>
+              <h2>Ask me anything</h2>
+            </div>
+            <span class="status-pill">Online</span>
+          </div>
+
+          <div class="suggested-questions">
+            <button class="quick-question" type="button">What career fits me?</button>
+            <button class="quick-question" type="button">How do I study better?</button>
+            <button class="quick-question" type="button">Should I play games or study?</button>
+            <button class="quick-question" type="button">What are wellness tips?</button>
+          </div>
+
+          <div class="chat-window" id="chatWindow" aria-live="polite">
+            <div class="message bot">
+              <div class="message-bubble">
+                Hello! I can help with studies, career choices, games, and general well-being questions. Ask me anything.
+              </div>
+            </div>
+          </div>
+
+          <form id="chatForm" class="chat-form">
+            <input
+              id="chatInput"
+              type="text"
+              placeholder="Type your question here..."
+              aria-label="Type your question"
+              autocomplete="off"
+            />
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>© 2026 Career Compass | Guidance for the future</p>
+      </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
